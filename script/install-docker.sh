@@ -9,13 +9,13 @@ WHITE="\033[0m"
 BOLD="\033[01m"
 
 # Script
-echo ${BOLD}"[RUN] ${YELLOW}REMOVE${BOLD} docker docker-engine docker.io containerd runc"${WHITE}
+echo ${BOLD}"${GREEN}[RUN]${YELLOW} REMOVE docker docker-engine docker.io containerd runc"${WHITE}
 
 sudo apt-get remove docker docker-engine docker.io containerd runc 
 
-echo ${BOLD}"[RUN] GET get-docker.sh"${WHITE}
+echo ${BOLD}"${GREEN}[RUN]${YELLOW} GET get-docker.sh"${WHITE}
 
-curl -fsSL https://get.docker.com -o get-docker.sh || { echo ${YELLOW}"[ERROR]"; exit 9; }
+curl -fsSL https://get.docker.com -o get-docker.sh || { echo ${RED}"[ERROR]"; exit 9; }
 
 sh get-docker.sh
 
@@ -36,4 +36,4 @@ sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
-sudo usermod -aG docker ubuntu && sudo reboot || { echo ${YELLOW}"[ERROR]"; exit 9; }
+sudo usermod -aG docker ubuntu && sudo reboot || { echo ${RED}"[ERROR]"; exit 9; }
