@@ -30,10 +30,11 @@ sh port-worker.sh
 5. kubeadm init for master node
 ```
 sudo kubeadm init
-....
+...
+...
+...
 sudo kubeadm join 10.0.14.1:6443 --token 6wv4tl.02cyaa568eo5zesc --discovery-token-ca-cert-hash sha256:082a3ca46cd0fdbc7b2347bf3782719a756484204ffcf585bcb075eb5c5c7438
-
-# join command -> copy -> to worker nodes
+# join command -> copy -> to worker nodes run
 ```
 6. kebeadm join for worker nodes
 ```
